@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    
+    <form class="mx-8 mt-10 border py-2 px-4 rounded" >
+        <div class="flex ">
+            <label class="font-semibold">
+                Name <input required type="text" name="name" class="border rounded p-1">
+            </label>
+            <label class="font-semibold">
+                Position <input required type="text" name="position" class="border rounded p-1">
+            </label>
+        </div>
+        <div class="flex mt-4 gap-2">
+            <label class="font-medium ">
+                Task <input required type="text" name="task" class="border rounded p-1 w-60 ">
+            </label>
+            <select name="priority" id="" class="border px-3 py-1 rounded">
+                <option selected value="Low">Select Priority</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
+        </div>        
+        <button class="w-full mt-6 my-2 rounded border py-2 font-bold text-white bg-zinc-400 hover:bg-zinc-500 active:bg-zinc-600 cursor-pointer">SUBMIT</button>
+    </form>
+    <div id="root" class="border mt-10 mx-8 min-h-72 rounded p-4 space-y-4 transition-transform duration-300 ">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
