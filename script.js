@@ -6,7 +6,10 @@ let isNowTasks = true;
 
 let tasks = [
   {
-    date: "30/3/2025, 13.54.15",
+    date: {
+      full : "30/3/2025, 13.54.15",
+      day : "Senin"
+    },
     done: false,
     name: "galuh",
     position: "CEO",
@@ -14,7 +17,43 @@ let tasks = [
     task: "jangan lupa sholat",
   },
   {
-    date: "30/3/2025, 13.54.15",
+    date: {
+      full : "30/3/2025, 13.54.15",
+      day : "Senin"
+    },
+    done: false,
+    name: "Emiya Shirou",
+    position: "Master",
+    priority: "Low",
+    task: "cook for saber",
+  },
+  {
+    date: {
+      full : "30/3/2025, 13.54.15",
+      day : "Senin"
+    },
+    done: true,
+    name: "Emiya Shirou",
+    position: "Master",
+    priority: "Low",
+    task: "cook for saber",
+  },
+  {
+    date: {
+      full : "30/3/2025, 13.54.15",
+      day : "Senin"
+    },
+    done: true,
+    name: "Diarmuid",
+    position: "Servant",
+    priority: "Medium",
+    task: "defeat saber",
+  },
+  {
+    date: {
+      full : "30/3/2025, 13.54.15",
+      day : "Senin"
+    },
     done: false,
     name: "galuh",
     position: "CEO",
@@ -22,24 +61,19 @@ let tasks = [
     task: "jangan lupa sholat",
   },
   {
-    date: "30/3/2025, 13.54.15",
-    done: false,
-    name: "galuh",
-    position: "CEO",
-    priority: "High",
-    task: "jangan lupa sholat",
-  },
-  {
-    date: "30/3/2025, 21.28.21",
+    date: {
+      full : "30/3/2025, 21.28.21",
+      day : "Senin"
+    },
     done: false,
     name: "galuh",
     position: "CEO",
     priority: "Medium",
-    task: "hahahha kamu sangatlah mkcaok amianidnadiasd asndlaldadda adla d lqoi oiroai oiae aoe oao oua ",
+    task: "hahahha kamu sangatlah mkcaok amianidnadiasd asndlaldadda adla d lqoi oiroai oiae aoe oao oua kcak gaming hahhahaha wlalalaldsalkak",
   },
 ];
 
-let completedTasks = [];
+let completedTasks = tasks.filter(a => a.done);
 
 const render = () => {
   let currentLists = isNowTasks ? tasks : completedTasks;
@@ -47,15 +81,15 @@ const render = () => {
   navigation.innerHTML = `
     <div class="flex text-sm gap-2">
         <button onclick="changeList(${true})" class=" w-1/2 py-1 font-bold duration-300 ${
-    isNowTasks ? "text-white bg-black" : "border border-black hover:bg-black/70"
-  } rounded cursor-pointer  hover:text-white">Tasks</button>
+    isNowTasks ? "text-black bg-white" : "border  hover:bg-white/30"
+  } rounded cursor-pointer">Tasks</button>
         <button onclick="changeList(${false})"  class=" w-1/2 py-1 font-bold duration-300 ${
     !isNowTasks
-      ? "text-white bg-black"
-      : "border border-black hover:bg-black/70"
-  } rounded cursor-pointer  hover:text-white">Completed Tasks</button>
+      ? "text-black bg-white"
+      : "border  hover:bg-white/30"
+  } rounded cursor-pointer">Completed Tasks</button>
     </div>
-    <button onclick="handleDeleteAll()" class="  bg-red-500  cursor-pointer text-white font-bold px-4 p-1 rounded hover:bg-red-600 active:bg-red-700 ">DELETE ALL <i class="fa-solid fa-trash fa-lg ml-2 "></i></button>
+    <button onclick="handleDeleteAll()" class="  bg-red-500  cursor-pointer  font-bold px-4 p-1 rounded hover:bg-red-600 active:bg-red-700 ">DELETE ALL <i class="fa-solid fa-trash fa-lg ml-2 "></i></button>
     `;
 
   if (!currentLists.length) {
@@ -74,9 +108,9 @@ const render = () => {
       if (task.priority == "Medium") colorPriority = "bg-orange-500/70";
       if (task.priority == "High") colorPriority = "bg-red-500/70";
       innerRoot += `
-            <div class="border text-sm py-2 px-4 flex gap-2 flex-col bg-zinc-300  rounded  ">
+            <div class="border text-sm py-2 px-4 flex gap-2 flex-col  ${task.done ? "bg-zinc-400" : "odd:bg-zinc-200 even:bg-zinc-300"} rounded  ">
                 <section class=" ">
-                    <p class="text-end mb-2">${task.date}</p>
+                    <p class="text-end mb-2">${task.date.day}, ${task.date.full}</p>
                     <div class="flex gap-10 ">
                         <p class="font-semibold"><span class="font-bold">Name</span> : ${
                           task.name
@@ -158,7 +192,10 @@ form.addEventListener("submit", (e) => {
     position: position.value,
     task: task.value,
     priority: priority.value == "Select Priority" ? "Low" : priority.value,
-    date: new Date().toLocaleString("id-ID"),
+    date: {
+      full : new Date().toLocaleString("id-ID"),
+      day : new Date().toLocaleDateString("id-ID", { weekday : "long" })
+    },
     done: false,
   };
   console.log(newTask);

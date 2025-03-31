@@ -7,7 +7,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
-<body>
+<body class="bg-black text-white"> 
     <h1 class="mt-5 text-2xl font-bold text-center">To Do Lists</h1>
     <form class="px-4 py-2 mx-8 mt-10 border rounded" >
         <div class="flex gap-4 ">
@@ -29,15 +29,15 @@
                 <option value="Low">Low</option>
             </select>
         </div>        
-        <button class="w-full py-2 my-2 mt-6 font-bold text-white border rounded cursor-pointer bg-zinc-400 hover:bg-zinc-500 active:bg-zinc-600">SUBMIT</button>
+        <button class="w-full py-2 my-2 mt-6 font-bold  border rounded text-black cursor-pointer bg-white hover:bg-slate-300 active:bg-slate-400">SUBMIT</button>
     </form>
     <div id="navigation" class="flex flex-col mx-8 mt-6 mb-4 gap-y-2 h-max">
         
     </div>
-    <div id="root" class="relative p-4 mx-8 space-y-4 transition-transform duration-300 border rounded min-h-72">
+    <div id="root" class="relative p-4 mx-8 space-y-4 transition-transform duration-300 border rounded min-h-72 text-black">
         
     </div>
 
     <script src="script.js"></script>
 </body>
-</html>
+</html> 
