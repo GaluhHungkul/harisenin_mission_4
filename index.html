@@ -5,32 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
-    
-    <form class="mx-8 mt-10 border py-2 px-4 rounded" >
-        <div class="flex ">
-            <label class="font-semibold">
-                Name <input required type="text" name="name" class="border rounded p-1">
+    <h1 class="mt-5 text-2xl font-bold text-center">To Do Lists</h1>
+    <form class="px-4 py-2 mx-8 mt-10 border rounded" >
+        <div class="flex gap-4 ">
+            <label class="flex flex-col font-semibold">
+                Name <input required type="text" name="name" class="w-full p-1 border rounded">
             </label>
-            <label class="font-semibold">
-                Position <input required type="text" name="position" class="border rounded p-1">
+            <label class="flex flex-col font-semibold">
+                Position <input required type="text" name="position" class="w-full p-1 border rounded">
             </label>
         </div>
-        <div class="flex mt-4 gap-2">
-            <label class="font-medium ">
-                Task <input required type="text" name="task" class="border rounded p-1 w-60 ">
+        <div class="flex justify-between gap-2 mt-4">
+            <label class="w-2/3 font-medium">
+                Task <input required type="text" name="task" class="w-full p-1 border rounded">
             </label>
-            <select name="priority" id="" class="border px-3 py-1 rounded">
+            <select name="priority" id="" class="px-3 py-2 mt-[22px] text-sm border rounded h-max">
                 <option selected value="Low">Select Priority</option>
                 <option value="High">High</option>
                 <option value="Medium">Medium</option>
                 <option value="Low">Low</option>
             </select>
         </div>        
-        <button class="w-full mt-6 my-2 rounded border py-2 font-bold text-white bg-zinc-400 hover:bg-zinc-500 active:bg-zinc-600 cursor-pointer">SUBMIT</button>
+        <button class="w-full py-2 my-2 mt-6 font-bold text-white border rounded cursor-pointer bg-zinc-400 hover:bg-zinc-500 active:bg-zinc-600">SUBMIT</button>
     </form>
-    <div id="root" class="border mt-10 mx-8 min-h-72 rounded p-4 space-y-4 transition-transform duration-300 ">
+    <div id="navigation" class="flex flex-col mx-8 mt-6 mb-4 gap-y-2 h-max">
+        
+    </div>
+    <div id="root" class="relative p-4 mx-8 space-y-4 transition-transform duration-300 border rounded min-h-72">
+        
     </div>
 
     <script src="script.js"></script>
