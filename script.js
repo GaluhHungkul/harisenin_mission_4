@@ -28,7 +28,7 @@ const render = () => {
 
   if (!currentLists.length) {
     root.innerHTML = `
-        <p class="text-center content-center min-h-72 font-bold text-2xl text-white border-2">${
+        <p class="text-center content-center min-h-72 font-bold lg:w-[80vw] lg:ml-1 lg:text-2xl text-white border-2">${
           isNowTasks
             ? "Kamu belum membuat task apapun 😴"
             : "Tidak ada tasks yang sudah selesai 😴"
@@ -102,6 +102,7 @@ const handleDelete = (index) => {
 };
 
 const handleDeleteAll = () => {
+  if(!tasks.length) return
   const confirm = window.confirm("Are you sure to delete all tasks?")
   if(!confirm) return 
   tasks = [];
