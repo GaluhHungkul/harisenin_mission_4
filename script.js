@@ -82,15 +82,15 @@ const render = () => {
   navigation.innerHTML = `
     <div class="flex text-sm gap-2">
         <button onclick="changeList(${true})" class=" lg:text-xl w-1/2 py-1 font-bold duration-300 ${
-    isNowTasks ? "text-black bg-white" : "border  hover:bg-white/30"
+    isNowTasks ? "text-slate-700 bg-slate-400 " : "border  hover:bg-slate-900/70"
   } rounded cursor-pointer">Tasks</button>
         <button onclick="changeList(${false})"  class=" lg:text-xl w-1/2 py-1 font-bold duration-300 ${
     !isNowTasks
-      ? "text-black bg-white"
-      : "border  hover:bg-white/30"
+      ? "text-slate-700 bg-slate-400 "
+      : "border  hover:bg-slate-900/70"
   } rounded cursor-pointer">Completed Tasks</button>
     </div>
-    <button onclick="handleDeleteAll()" class=" lg:text-xl  bg-gray-500  cursor-pointer  font-bold px-4 p-1 rounded hover:bg-gray-600 active:bg-gray-700  lg:ml-auto hover:text-red-600 ">DELETE ALL <i class="fa-solid fa-trash fa-lg ml-2 "></i></button>
+    <button onclick="handleDeleteAll()" class=" lg:text-xl  bg-gray-500  cursor-pointer  font-bold px-4 p-1 text-white rounded hover:bg-gray-600 active:bg-gray-700  lg:ml-auto hover:text-red-600 ">DELETE ALL <i class="fa-solid fa-trash fa-lg ml-2 "></i></button>
     `;
 
   if (!currentLists.length) {
@@ -109,13 +109,13 @@ const render = () => {
       if (task.priority == "Medium") colorPriority = "bg-orange-500/70";
       if (task.priority == "High") colorPriority = "bg-red-500/70";
       innerRoot += `
-            <div class="border text-sm py-2 px-4 ${task.done ? "bg-zinc-400" : "odd:bg-zinc-200 even:bg-zinc-300"} rounded lg:hover:scale-105 hover:bg-zinc-400 duration-300 relative lg:text-base">
+            <div class="text-slate-400 text-sm py-2 px-4 ${task.done ? "bg-slate-900" : "odd:bg-slate-700 even:bg-slate-600"} rounded lg:hover:scale-105  duration-300 relative lg:text-base">
               <div class="space-y-4 mb-4 ">
                   <section class="">
-                    <p class="text-end mb-2">${task.date.day}, ${task.date.full}</p>
+                    <p class="text-end mb-2 text-slate-300">${task.date.day}, ${task.date.full}</p>
                     <div class="flex gap-10 ">
-                        <p class="font-semibold"><span class="font-bold">Name</span> : ${task.name}</p>
-                        <p class="font-semibold"><span class="font-bold">Position</span> : ${task.position}</p>
+                        <p class="font-semibold">Name : <span class="font-bold text-slate-300 ">${task.name}</span></p>
+                        <p class="font-semibold " >Position : <span class="font-bold text-slate-300">${task.position}</span></p>
                     </div>
                   </section>
                   <section class="flex items-center justify-between gap-4 ">
@@ -136,8 +136,8 @@ const render = () => {
                       </div>                 
                   </section>  
               </div>          
-              <section class="text-zinc-600 font-semibold ">
-                    <p class="font-bold">Task : <br /><span class="text-gray-700 ${
+              <section class="text-slate-400 font-semibold ">
+                    <p class="font-bold">Task : <br /><span class="text-slate-300 ${
                       task.done && "line-through"
                     }">${task.task}</span></p>
               </section>
