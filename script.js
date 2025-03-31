@@ -5,74 +5,7 @@ const navigation = document.getElementById("navigation");
 let isNowTasks = true;
 
 
-let tasks = [
-  {
-    date: {
-      full : "30/3/2025, 13.54.15",
-      day : "Senin"
-    },
-    done: false,
-    name: "galuh",
-    position: "CEO",
-    priority: "High",
-    task: "jangan lupa sholat",
-  },
-  {
-    date: {
-      full : "30/3/2025, 13.54.15",
-      day : "Senin"
-    },
-    done: false,
-    name: "Emiya Shirou",
-    position: "Master",
-    priority: "Low",
-    task: "cook for saber",
-  },
-  {
-    date: {
-      full : "30/3/2025, 13.54.15",
-      day : "Senin"
-    },
-    done: true,
-    name: "Emiya Shirou",
-    position: "Master",
-    priority: "Low",
-    task: "cook for saber",
-  },
-  {
-    date: {
-      full : "30/3/2025, 13.54.15",
-      day : "Senin"
-    },
-    done: true,
-    name: "Diarmuid",
-    position: "Servant",
-    priority: "Medium",
-    task: "defeat saber",
-  },
-  {
-    date: {
-      full : "30/3/2025, 13.54.15",
-      day : "Senin"
-    },
-    done: false,
-    name: "galuh",
-    position: "CEO",
-    priority: "High",
-    task: "jangan lupa sholat",
-  },
-  {
-    date: {
-      full : "30/3/2025, 21.28.21",
-      day : "Senin"
-    },
-    done: false,
-    name: "galuh",
-    position: "CEO",
-    priority: "Medium",
-    task: "hahahha kamu sangatlah mkcaok amianidnadiasd asndlaldadda adla d lqoi oiroai oiae aoe oao oua kcak gaming hahhahaha wlalalaldsalkak",
-  },
-];
+let tasks = [];
 
 let completedTasks = tasks.filter(a => a.done);
 
